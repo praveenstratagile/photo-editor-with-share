@@ -40,8 +40,9 @@ class _ExampleState extends State<Example> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => StoriesEditor(
-                            giphyKey: 'C4dMA7Q19nqEGdpfj82T8ssbOeZIylD4',
+                      builder: (context) => YakinImageEditor(
+                        editorBackgroundColor: const Color(0xff007480),
+                            sampleText: 'Hello how are you',
                             //fontFamilyList: const ['Shizuru', 'Aladin'],
                             galleryThumbnailQuality: 300,
                             //isCustomFontList: true,

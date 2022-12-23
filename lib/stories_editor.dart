@@ -15,7 +15,7 @@ import 'package:stories_editor/src/presentation/main_view/main_view.dart';
 
 export 'package:stories_editor/stories_editor.dart';
 
-class StoriesEditor extends StatefulWidget {
+class YakinImageEditor extends StatefulWidget {
   /// editor custom font families
   final List<String>? fontFamilyList;
 
@@ -23,7 +23,7 @@ class StoriesEditor extends StatefulWidget {
   final bool? isCustomFontList;
 
   /// giphy api key
-  final String giphyKey;
+  final String sampleText;
 
   /// editor custom color gradients
   final List<List<Color>>? gradientColors;
@@ -48,11 +48,27 @@ class StoriesEditor extends StatefulWidget {
 
   /// gallery thumbnail quality
   final int? galleryThumbnailQuality;
+  final String tapToTypeText;
+  final String discardEditText;
+  final String exitMsg ;
+  final String cancelText ;
+  final String discardText;
+  final String saveDraftText;
+  final String shareText;
+  final String? bottomSubText;
 
-  const StoriesEditor(
+  const YakinImageEditor(
       {Key? key,
-      required this.giphyKey,
+      required this.sampleText,
       required this.onDone,
+      this.tapToTypeText = "Tap to Type",
+      this.discardEditText = 'Discard Edits?',
+      this.exitMsg = "If you go back now, you'll lose all the edits you've made.",
+      this.cancelText ="cancel",
+      this.discardText = "Discard",
+      this.saveDraftText = "Save Draft",
+      this.shareText="Share",
+      this.bottomSubText,
       this.middleBottomWidget,
       this.colorList,
       this.gradientColors,
@@ -65,10 +81,10 @@ class StoriesEditor extends StatefulWidget {
       : super(key: key);
 
   @override
-  _StoriesEditorState createState() => _StoriesEditorState();
+  _YakinImageEditorState createState() => _YakinImageEditorState();
 }
 
-class _StoriesEditorState extends State<StoriesEditor> {
+class _YakinImageEditorState extends State<YakinImageEditor> {
   @override
   void initState() {
     Paint.enableDithering = true;
@@ -107,7 +123,15 @@ class _StoriesEditorState extends State<StoriesEditor> {
             ChangeNotifierProvider(create: (_) => TextEditingNotifier()),
           ],
           child: MainView(
-            giphyKey: widget.giphyKey,
+            sampleText: widget.sampleText,
+            tapToTypeText:widget.tapToTypeText,
+            discardEditText:widget.discardEditText,
+            exitMsg :widget.exitMsg ,
+            cancelText :widget.cancelText ,
+            discardText:widget.discardText,
+            saveDraftText:widget.saveDraftText,
+            shareText:widget.shareText,
+            bottomSubText:widget.bottomSubText,
             onDone: widget.onDone,
             fontFamilyList: widget.fontFamilyList,
             isCustomFontList: widget.isCustomFontList,

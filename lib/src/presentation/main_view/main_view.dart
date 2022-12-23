@@ -34,8 +34,8 @@ class MainView extends StatefulWidget {
   /// editor custom font families package
   final bool? isCustomFontList;
 
-  /// giphy api key
-  final String giphyKey;
+  /// initial text
+  final String sampleText;
 
   /// editor custom color gradients
   final List<List<Color>>? gradientColors;
@@ -60,10 +60,32 @@ class MainView extends StatefulWidget {
 
   /// editor custom color palette list
   List<Color>? colorList;
+  ///text to show for tap to type
+  String? tapToTypeText;
+
+ 
+ 
+
+  String discardEditText;
+  String exitMsg;
+  String cancelText;
+  String discardText;
+  String saveDraftText;
+  String shareText;
+  String? bottomSubText;
+
   MainView(
       {Key? key,
-      required this.giphyKey,
+      required this.sampleText,
       required this.onDone,
+      this.tapToTypeText,
+      this.discardEditText = 'Discard Edits?',
+      this.exitMsg = "If you go back now, you'll lose all the edits you've made.",
+      this.cancelText ="cancel",
+      this.discardText = "Discard",
+      this.saveDraftText = "Save Draft",
+      this.shareText="Share",
+      this.bottomSubText,
       this.middleBottomWidget,
       this.colorList,
       this.isCustomFontList,
@@ -100,9 +122,13 @@ class _MainViewState extends State<MainView> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       var _control = Provider.of<ControlNotifier>(context, listen: false);
+      var editTextContol = Provider.of<TextEditingNotifier>(context, listen: false);
+      // /// initialize control variable provider
+      editTextContol.text=widget.sampleText;
+      _control.isTextEditing =true;
+      
 
-      /// initialize control variable provider
-      _control.giphyKey = widget.giphyKey;
+      
       _control.middleBottomWidget = widget.middleBottomWidget;
       _control.isCustomFontList = widget.isCustomFontList ?? false;
       if (widget.gradientColors != null) {
@@ -293,7 +319,7 @@ class _MainViewState extends State<MainView> {
                               ignoring: true,
                               child: Align(
                                 alignment: const Alignment(0, -0.1),
-                                child: Text('Tap to type',
+                                child: Text(widget.tapToTypeText??'Tap to type',
                                     style: TextStyle(
                                         fontFamily: 'Alegreya',
                                         package: 'stories_editor',
@@ -335,6 +361,7 @@ class _MainViewState extends State<MainView> {
                             visible: controlNotifier.isTextEditing,
                             child: TextEditor(
                               context: context,
+                              text: widget.sampleText,
                             ),
                           ),
 
@@ -356,6 +383,8 @@ class _MainViewState extends State<MainView> {
                             widget.onDone!(bytes);
                           });
                         },
+                        shareText:widget.shareText ,
+                        bottomSubText:widget.bottomSubText ,
                         onDoneButtonStyle: widget.onDoneButtonStyle,
                         editorBackgroundColor: widget.editorBackgroundColor,
                       ),
@@ -403,9 +432,8 @@ class _MainViewState extends State<MainView> {
                                 color: Colors.white,
                                 width: 1.2,
                               )),
-                          child: const Text(
-                            'Cancel',
-                            style: TextStyle(
+                          child:  Text(widget.cancelText,
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400),
@@ -443,7 +471,18 @@ class _MainViewState extends State<MainView> {
     /// show close dialog
     else if (!controlNotifier.isTextEditing && !controlNotifier.isPainting) {
       return widget.onBackPress ??
-          exitDialog(context: context, contentKey: contentKey);
+// String discardEditText = 'Discard Edits?',
+// String exitMsg = "If you go back now, you'll lose all the edits you've made.",
+// String cancelText ="cancel",
+// String discardText = "Discard",
+// String saveDraftText = "Save Draft"
+          exitDialog(context: context, contentKey: contentKey,
+          discardEditText:widget.discardEditText,
+exitMsg:widget.exitMsg,
+cancelText:widget.cancelText,
+discardText:widget.discardText,
+saveDraftText:widget.saveDraftText,
+          );
     }
     return false;
   }

@@ -12,6 +12,8 @@ class BottomTools extends StatelessWidget {
   final GlobalKey contentKey;
   final Function(String imageUri) onDone;
   final Widget? onDoneButtonStyle;
+  final String shareText;
+  final String? bottomSubText;
 
   /// editor background color
   final Color? editorBackgroundColor;
@@ -20,7 +22,10 @@ class BottomTools extends StatelessWidget {
       required this.contentKey,
       required this.onDone,
       this.onDoneButtonStyle,
-      this.editorBackgroundColor})
+      this.editorBackgroundColor,
+      this.shareText="Share",
+      this.bottomSubText
+      })
       : super(key: key);
 
   @override
@@ -102,14 +107,13 @@ class BottomTools extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Image.asset(
-                            'assets/images/instagram_logo.png',
-                            package: 'stories_editor',
+                            'assets/images/yakinLogo.png',
+                         
                             color: Colors.white,
                             height: 42,
                           ),
-                          const Text(
-                            'Stories Creator',
-                            style: TextStyle(
+                           Text(bottomSubText??"",
+                            style: const TextStyle(
                                 color: Colors.white38,
                                 letterSpacing: 1.5,
                                 fontSize: 9.2,
@@ -150,16 +154,15 @@ class BottomTools extends StatelessWidget {
                                         color: Colors.white, width: 1.5)),
                                 child: Row(
                                     mainAxisSize: MainAxisSize.min,
-                                    children: const [
-                                      Text(
-                                        'Share',
-                                        style: TextStyle(
+                                    children:  [
+                                      Text(shareText,
+                                        style: const TextStyle(
                                             color: Colors.white,
                                             letterSpacing: 1.5,
                                             fontSize: 16,
                                             fontWeight: FontWeight.w400),
                                       ),
-                                      Padding(
+                                      const Padding(
                                         padding: EdgeInsets.only(left: 5),
                                         child: Icon(
                                           Icons.arrow_forward_ios,

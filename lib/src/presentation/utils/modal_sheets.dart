@@ -38,7 +38,13 @@ Future createGiphyItem(
 }
 
 /// custom exit dialog
-Future<bool> exitDialog({required context, required contentKey}) async {
+Future<bool> exitDialog({required context, required contentKey,
+String discardEditText = 'Discard Edits?',
+String exitMsg = "If you go back now, you'll lose all the edits you've made.",
+String cancelText ="cancel",
+String discardText = "Discard",
+String saveDraftText = "Save Draft"
+}) async {
   return (await showDialog(
         context: context,
         barrierColor: Colors.black38,
@@ -57,7 +63,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
               height: 280,
               decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
-                  color: HexColor.fromHex('#262626'),
+                  color: const Color(0xff007480),//HexColor.fromHex('#262626'),
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: const [
                     BoxShadow(
@@ -68,9 +74,8 @@ Future<bool> exitDialog({required context, required contentKey}) async {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  const Text(
-                    'Discard Edits?',
-                    style: TextStyle(
+                   Text(discardEditText,
+                    style:const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
@@ -79,9 +84,8 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    "If you go back now, you'll lose all the edits you've made.",
-                    style: TextStyle(
+                   Text(exitMsg,
+                    style:const TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
                         color: Colors.white54,
@@ -98,8 +102,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                       _resetDefaults(context: context);
                       Navigator.of(context).pop(true);
                     },
-                    child: Text(
-                      'Discard',
+                    child: Text(discardText,
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.redAccent.shade200,
@@ -140,9 +143,8 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                         _dispose(context: context, message: 'Draft Empty');
                       }
                     },
-                    child: const Text(
-                      'Save Draft',
-                      style: TextStyle(
+                    child:  Text(saveDraftText,
+                      style:const TextStyle(
                           fontSize: 16,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -162,9 +164,8 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                     onTap: () {
                       Navigator.of(context).pop(false);
                     },
-                    child: const Text(
-                      'Cancel',
-                      style: TextStyle(
+                    child:  Text(cancelText,
+                      style:const TextStyle(
                           fontSize: 16,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

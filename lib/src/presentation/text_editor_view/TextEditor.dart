@@ -15,7 +15,8 @@ import 'package:stories_editor/src/presentation/widgets/size_slider_selector.dar
 
 class TextEditor extends StatefulWidget {
   final BuildContext context;
-  const TextEditor({Key? key, required this.context}) : super(key: key);
+  final String text;
+  const TextEditor({Key? key, required this.context,required this.text}) : super(key: key);
 
   @override
   State<TextEditor> createState() => _TextEditorState();
@@ -33,6 +34,7 @@ class _TextEditorState extends State<TextEditor> {
       _editorNotifier
         ..textController.text = _editorNotifier.text
         ..fontFamilyController = PageController(viewportFraction: .125);
+     // _editorNotifier.textList.add(widget.text.trim());
     });
     super.initState();
   }
@@ -63,9 +65,12 @@ class _TextEditorState extends State<TextEditor> {
                         ),
 
                         /// text size
-                        const Align(
-                          alignment: Alignment.centerLeft,
-                          child: SizeSliderWidget(),
+                        const Padding(
+                          padding:  EdgeInsets.only(left:8.0),
+                          child:  Align(
+                            alignment: Alignment.centerLeft,
+                            child: SizeSliderWidget(),
+                          ),
                         ),
 
                         /// top tools
