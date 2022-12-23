@@ -1,7 +1,7 @@
 name: stories_editor
-description: This is a package created in the style of the instagram story creator, with which you can create images with images, texts, stickers (Gifs), finger drawing.
+description: This is a package created in the style of the instagram story creator, with which you can create images with images, texts, finger drawing.
 version: 0.2.2
-homepage: https://github.com/camilo1498/stories_editor
+homepage: https://github.com/praveenstratagile/photo-editor-with-share
 
 environment:
   sdk: '>=2.18.2 <3.0.0'
@@ -69,7 +69,6 @@ flutter:
     - packages/stories_editor/assets/icons/trash.png
     - packages/stories_editor/assets/icons/photo_filter.png
     - packages/stories_editor/assets/icons/video_trim.png
-    - packages/stories_editor/assets/images/instagram_logo.png
     - packages/stories_editor/assets/images/yakinLogo.png
 
   fonts:

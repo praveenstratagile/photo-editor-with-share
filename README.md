@@ -76,10 +76,10 @@ import 'package:stories_editor/stories_editor.dart';
       <key>NSPhotoLibraryAddUsageDescription</key>
       <string>NSPhotoLibraryAddUsageDescription</string>
       ```
-2) Create a `StoriesEditor()` widget with the follow params:
+2) Create a `YakinImageEditor()` widget with the follow params:
 
 ```dart
-StoriesEditor(
+YakinImageEditor(
     giphyKey: '[YOUR GIPHY API KEY]', /// (String) required param
     onDone: (String uri){
       /// uri is the local path of final render Uint8List
@@ -143,8 +143,8 @@ class _ExampleState extends State<Example> {
         body: Center(
           child: ElevatedButton(
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => StoriesEditor(
-                giphyKey: '[HERE YOUR API KEY]',
+              Navigator.push(context, MaterialPageRoute(builder: (context) => YakinImageEditor(
+                sampletext: 'your text here',
                 onDone: (uri){
                   debugPrint(uri);
                   Share.shareFiles([uri]);
