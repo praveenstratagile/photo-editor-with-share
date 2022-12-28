@@ -69,7 +69,6 @@ flutter:
     - packages/stories_editor/assets/icons/trash.png
     - packages/stories_editor/assets/icons/photo_filter.png
     - packages/stories_editor/assets/icons/video_trim.png
-    - packages/stories_editor/assets/images/yakinLogo.png
 
   fonts:
 

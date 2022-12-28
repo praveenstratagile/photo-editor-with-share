@@ -73,6 +73,7 @@ class MainView extends StatefulWidget {
   String saveDraftText;
   String shareText;
   String? bottomSubText;
+  String? imageAssetPath;
 
   MainView(
       {Key? key,
@@ -85,6 +86,7 @@ class MainView extends StatefulWidget {
       this.discardText = "Discard",
       this.saveDraftText = "Save Draft",
       this.shareText="Share",
+      this.imageAssetPath,
       this.bottomSubText,
       this.middleBottomWidget,
       this.colorList,
@@ -387,6 +389,7 @@ class _MainViewState extends State<MainView> {
                         bottomSubText:widget.bottomSubText ,
                         onDoneButtonStyle: widget.onDoneButtonStyle,
                         editorBackgroundColor: widget.editorBackgroundColor,
+                        imageAssetPath: widget.imageAssetPath,
                       ),
                   ],
                 ),

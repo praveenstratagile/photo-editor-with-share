@@ -14,6 +14,7 @@ class BottomTools extends StatelessWidget {
   final Widget? onDoneButtonStyle;
   final String shareText;
   final String? bottomSubText;
+  final String? imageAssetPath;
 
   /// editor background color
   final Color? editorBackgroundColor;
@@ -24,6 +25,7 @@ class BottomTools extends StatelessWidget {
       this.onDoneButtonStyle,
       this.editorBackgroundColor,
       this.shareText="Share",
+      this.imageAssetPath,
       this.bottomSubText
       })
       : super(key: key);
@@ -106,8 +108,8 @@ class BottomTools extends StatelessWidget {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Image.asset(
-                            'assets/images/yakinLogo.png',
+                          if(imageAssetPath!=null)
+                          Image.asset(imageAssetPath!,
                          
                             color: Colors.white,
                             height: 42,

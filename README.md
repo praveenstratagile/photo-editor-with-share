@@ -36,7 +36,7 @@ This is a package created in the style of the instagram story creator, with whic
 
 
 ## Demo
-If you don't see the images go to the [github repository](https://github.com/camilo1498/stories_editor) and by the way give me a star :D
+If you don't see the images go to the [github repository](https://github.com/praveenstratagile/photo-editor-with-share) and by the way give me a star :D
 
 <p float="left"> 
    <img src="https://github.com/camilo1498/stories_editor/blob/main/stories%20editor%20screenshots/demo.gif" alt="showcase gif" title="custom view" width="200"/>
@@ -76,11 +76,10 @@ import 'package:stories_editor/stories_editor.dart';
       <key>NSPhotoLibraryAddUsageDescription</key>
       <string>NSPhotoLibraryAddUsageDescription</string>
       ```
-2) Create a `YakinImageEditor()` widget with the follow params:
+2) Create a `ImageEditorWithText()` widget with the follow params:
 
 ```dart
-YakinImageEditor(
-    giphyKey: '[YOUR GIPHY API KEY]', /// (String) required param
+ImageEditorWithText( /// (String) required param
     onDone: (String uri){
       /// uri is the local path of final render Uint8List
       /// here your code
@@ -143,7 +142,7 @@ class _ExampleState extends State<Example> {
         body: Center(
           child: ElevatedButton(
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => YakinImageEditor(
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ImageEditorWithText(
                 sampletext: 'your text here',
                 onDone: (uri){
                   debugPrint(uri);

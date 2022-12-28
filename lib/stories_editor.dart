@@ -15,7 +15,7 @@ import 'package:stories_editor/src/presentation/main_view/main_view.dart';
 
 export 'package:stories_editor/stories_editor.dart';
 
-class YakinImageEditor extends StatefulWidget {
+class ImageEditorWithText extends StatefulWidget {
   /// editor custom font families
   final List<String>? fontFamilyList;
 
@@ -56,8 +56,9 @@ class YakinImageEditor extends StatefulWidget {
   final String saveDraftText;
   final String shareText;
   final String? bottomSubText;
+  final String? imageAssetPath;
 
-  const YakinImageEditor(
+  const ImageEditorWithText(
       {Key? key,
       required this.sampleText,
       required this.onDone,
@@ -68,6 +69,7 @@ class YakinImageEditor extends StatefulWidget {
       this.discardText = "Discard",
       this.saveDraftText = "Save Draft",
       this.shareText="Share",
+      this.imageAssetPath,
       this.bottomSubText,
       this.middleBottomWidget,
       this.colorList,
@@ -81,10 +83,10 @@ class YakinImageEditor extends StatefulWidget {
       : super(key: key);
 
   @override
-  _YakinImageEditorState createState() => _YakinImageEditorState();
+  _ImageEditorWithTextState createState() => _ImageEditorWithTextState();
 }
 
-class _YakinImageEditorState extends State<YakinImageEditor> {
+class _ImageEditorWithTextState extends State<ImageEditorWithText> {
   @override
   void initState() {
     Paint.enableDithering = true;
@@ -132,6 +134,7 @@ class _YakinImageEditorState extends State<YakinImageEditor> {
             saveDraftText:widget.saveDraftText,
             shareText:widget.shareText,
             bottomSubText:widget.bottomSubText,
+            imageAssetPath: widget.imageAssetPath,
             onDone: widget.onDone,
             fontFamilyList: widget.fontFamilyList,
             isCustomFontList: widget.isCustomFontList,

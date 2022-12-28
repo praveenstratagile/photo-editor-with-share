@@ -40,11 +40,12 @@ class _ExampleState extends State<Example> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => YakinImageEditor(
+                      builder: (context) => ImageEditorWithText(
                         editorBackgroundColor: const Color(0xff007480),
-                            sampleText: 'Hello how are you',
+                            sampleText: 'هذه هي الطريقة التي ننشئ بها حزمة للتطبيقات',
                             //fontFamilyList: const ['Shizuru', 'Aladin'],
                             galleryThumbnailQuality: 300,
+                            imageAssetPath: "assets/images/yakinLogo.png",
                             //isCustomFontList: true,
                             onDone: (uri) {
                               debugPrint(uri);
