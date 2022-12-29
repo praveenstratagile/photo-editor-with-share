@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/control_provider.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/text_editing_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/control_provider.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/text_editing_notifier.dart';
 
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({Key? key}) : super(key: key);
@@ -60,7 +60,7 @@ class TextFieldWidget extends StatelessWidget {
       textAlign: editorNotifier.textAlign,
       style: TextStyle(
           fontFamily: controlNotifier.fontList![editorNotifier.fontFamilyIndex],
-          package: controlNotifier.isCustomFontList ? null : 'stories_editor',
+          package: controlNotifier.isCustomFontList ? null : 'photo_editor_with_share',
           shadows: <Shadow>[
             Shadow(
                 offset: const Offset(1.0, 1.0),
@@ -98,7 +98,7 @@ class TextFieldWidget extends StatelessWidget {
               fontFamily:
                   controlNotifier.fontList![editorNotifier.fontFamilyIndex],
               package:
-                  controlNotifier.isCustomFontList ? null : 'stories_editor',
+                  controlNotifier.isCustomFontList ? null : 'photo_editor_with_share',
               shadows: <Shadow>[
                 Shadow(
                     offset: const Offset(1.0, 1.0),

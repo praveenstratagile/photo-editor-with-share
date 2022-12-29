@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/text_editing_notifier.dart';
-import 'package:stories_editor/src/presentation/widgets/tool_button.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/text_editing_notifier.dart';
+import 'package:photo_editor_with_share/src/presentation/widgets/tool_button.dart';
 
 class TopTextTools extends StatelessWidget {
   final void Function() onDone;
@@ -39,13 +39,13 @@ class TopTextTools extends StatelessWidget {
                         child: !editorNotifier.isFontFamily
                             ? const ImageIcon(
                                 AssetImage('assets/icons/text.png',
-                                    package: 'stories_editor'),
+                                    package: 'photo_editor_with_share'),
                                 size: 20,
                                 color: Colors.white,
                               )
                             : Image.asset(
                                 'assets/icons/circular_gradient.png',
-                                package: 'stories_editor',
+                                package: 'photo_editor_with_share',
                               )),
                   ),
 
@@ -74,7 +74,7 @@ class TopTextTools extends StatelessWidget {
                             padding: EdgeInsets.only(left: 5, bottom: 3),
                             child: ImageIcon(
                               AssetImage('assets/icons/font_backGround.png',
-                                  package: 'stories_editor'),
+                                  package: 'photo_editor_with_share'),
                               color: Colors.white,
                             ),
                           ),
@@ -115,7 +115,7 @@ class TopTextTools extends StatelessWidget {
                             padding: EdgeInsets.all(0),
                             child: ImageIcon(
                               AssetImage('assets/icons/video_trim.png',
-                                  package: 'stories_editor'),
+                                  package: 'photo_editor_with_share'),
                               color: Colors.white,
                             ),
                           ),

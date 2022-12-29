@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_gif_picker/modal_gif_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:stories_editor/src/domain/models/editable_items.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/control_provider.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/draggable_widget_notifier.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/gradient_notifier.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/text_editing_notifier.dart';
-import 'package:stories_editor/src/presentation/utils/constants/app_enums.dart';
-import 'package:stories_editor/src/presentation/widgets/animated_onTap_button.dart';
-import 'package:stories_editor/src/presentation/widgets/file_image_bg.dart';
+import 'package:photo_editor_with_share/src/domain/models/editable_items.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/control_provider.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/draggable_widget_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/gradient_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/text_editing_notifier.dart';
+import 'package:photo_editor_with_share/src/presentation/utils/constants/app_enums.dart';
+import 'package:photo_editor_with_share/src/presentation/widgets/animated_onTap_button.dart';
+import 'package:photo_editor_with_share/src/presentation/widgets/file_image_bg.dart';
 
 class DraggableWidget extends StatelessWidget {
   final EditableItem draggableWidget;
@@ -224,7 +224,7 @@ class DraggableWidget extends StatelessWidget {
       bool background = false}) {
     return TextStyle(
       fontFamily: controlNotifier.fontList![draggableWidget.fontFamily],
-      package: controlNotifier.isCustomFontList ? null : 'stories_editor',
+      package: controlNotifier.isCustomFontList ? null : 'photo_editor_with_share',
       fontWeight: FontWeight.w500,
       // shadows: <Shadow>[
       //   Shadow(

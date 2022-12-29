@@ -1,19 +1,19 @@
 // ignore_for_file: must_be_immutable
-library stories_editor;
+library photo_editor_with_share;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/control_provider.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/draggable_widget_notifier.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/gradient_notifier.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/painting_notifier.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/scroll_notifier.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/text_editing_notifier.dart';
-import 'package:stories_editor/src/presentation/main_view/main_view.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/control_provider.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/draggable_widget_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/gradient_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/painting_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/scroll_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/text_editing_notifier.dart';
+import 'package:photo_editor_with_share/src/presentation/main_view/main_view.dart';
 
-export 'package:stories_editor/stories_editor.dart';
+export 'package:photo_editor_with_share/stories_editor.dart';
 
 class ImageEditorWithText extends StatefulWidget {
   /// editor custom font families

@@ -7,25 +7,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gallery_media_picker/gallery_media_picker.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:provider/provider.dart';
-import 'package:stories_editor/src/domain/models/editable_items.dart';
-import 'package:stories_editor/src/domain/models/painting_model.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/control_provider.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/draggable_widget_notifier.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/gradient_notifier.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/painting_notifier.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/scroll_notifier.dart';
-import 'package:stories_editor/src/domain/providers/notifiers/text_editing_notifier.dart';
-import 'package:stories_editor/src/presentation/bar_tools/bottom_tools.dart';
-import 'package:stories_editor/src/presentation/bar_tools/top_tools.dart';
-import 'package:stories_editor/src/presentation/draggable_items/delete_item.dart';
-import 'package:stories_editor/src/presentation/draggable_items/draggable_widget.dart';
-import 'package:stories_editor/src/presentation/painting_view/painting.dart';
-import 'package:stories_editor/src/presentation/painting_view/widgets/sketcher.dart';
-import 'package:stories_editor/src/presentation/text_editor_view/TextEditor.dart';
-import 'package:stories_editor/src/presentation/utils/constants/app_enums.dart';
-import 'package:stories_editor/src/presentation/utils/modal_sheets.dart';
-import 'package:stories_editor/src/presentation/widgets/animated_onTap_button.dart';
-import 'package:stories_editor/src/presentation/widgets/scrollable_pageView.dart';
+import 'package:photo_editor_with_share/src/domain/models/editable_items.dart';
+import 'package:photo_editor_with_share/src/domain/models/painting_model.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/control_provider.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/draggable_widget_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/gradient_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/painting_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/scroll_notifier.dart';
+import 'package:photo_editor_with_share/src/domain/providers/notifiers/text_editing_notifier.dart';
+import 'package:photo_editor_with_share/src/presentation/bar_tools/bottom_tools.dart';
+import 'package:photo_editor_with_share/src/presentation/bar_tools/top_tools.dart';
+import 'package:photo_editor_with_share/src/presentation/draggable_items/delete_item.dart';
+import 'package:photo_editor_with_share/src/presentation/draggable_items/draggable_widget.dart';
+import 'package:photo_editor_with_share/src/presentation/painting_view/painting.dart';
+import 'package:photo_editor_with_share/src/presentation/painting_view/widgets/sketcher.dart';
+import 'package:photo_editor_with_share/src/presentation/text_editor_view/TextEditor.dart';
+import 'package:photo_editor_with_share/src/presentation/utils/constants/app_enums.dart';
+import 'package:photo_editor_with_share/src/presentation/utils/modal_sheets.dart';
+import 'package:photo_editor_with_share/src/presentation/widgets/animated_onTap_button.dart';
+import 'package:photo_editor_with_share/src/presentation/widgets/scrollable_pageView.dart';
 
 class MainView extends StatefulWidget {
   /// editor custom font families
@@ -324,7 +324,7 @@ class _MainViewState extends State<MainView> {
                                 child: Text(widget.tapToTypeText??'Tap to type',
                                     style: TextStyle(
                                         fontFamily: 'Alegreya',
-                                        package: 'stories_editor',
+                                        package: 'photo_editor_with_share',
                                         fontWeight: FontWeight.w500,
                                         fontSize: 30,
                                         color: Colors.white.withOpacity(0.5),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:photo_editor_with_share/stories_editor.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:stories_editor/stories_editor.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stories_editor/src/presentation/utils/Extensions/hexColor.dart';
+import 'package:photo_editor_with_share/src/presentation/utils/Extensions/hexColor.dart';
 
 class AppColors {
   static const defaultColors = [
