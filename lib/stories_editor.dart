@@ -102,7 +102,6 @@ class _ImageEditorWithTextState extends State<ImageEditorWithText> {
   @override
   void dispose() {
     if (mounted) {
-      ScreenUtil.init(context);
       SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.white,
     ));
