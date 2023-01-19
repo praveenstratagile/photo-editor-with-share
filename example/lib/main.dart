@@ -41,8 +41,9 @@ class _ExampleState extends State<Example> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => ImageEditorWithText(
-                        editorBackgroundColor: const Color(0xff007480),
-                            sampleText: 'هذه هي الطريقة التي ننشئ بها حزمة للتطبيقات',
+                            editorBackgroundColor: const Color(0xff007480),
+                            sampleText:
+                                'هذه هي الطريقة التي ننشئ بها حزمة للتطبيقات The watson have a family and he is well handsome gentleman. this text is used to determine the shadow effect that occure between texts',
                             //fontFamilyList: const ['Shizuru', 'Aladin'],
                             galleryThumbnailQuality: 300,
                             imageAssetPath: "assets/images/yakinLogo.png",

@@ -16,7 +16,8 @@ import 'package:photo_editor_with_share/src/presentation/widgets/size_slider_sel
 class TextEditor extends StatefulWidget {
   final BuildContext context;
   final String text;
-  const TextEditor({Key? key, required this.context,required this.text}) : super(key: key);
+  const TextEditor({Key? key, required this.context, required this.text})
+      : super(key: key);
 
   @override
   State<TextEditor> createState() => _TextEditorState();
@@ -34,7 +35,7 @@ class _TextEditorState extends State<TextEditor> {
       _editorNotifier
         ..textController.text = _editorNotifier.text
         ..fontFamilyController = PageController(viewportFraction: .125);
-     // _editorNotifier.textList.add(widget.text.trim());
+      // _editorNotifier.textList.add(widget.text.trim());
     });
     super.initState();
   }
@@ -66,8 +67,8 @@ class _TextEditorState extends State<TextEditor> {
 
                         /// text size
                         const Padding(
-                          padding:  EdgeInsets.only(left:8.0),
-                          child:  Align(
+                          padding: EdgeInsets.only(left: 8.0),
+                          child: Align(
                             alignment: Alignment.centerLeft,
                             child: SizeSliderWidget(),
                           ),
