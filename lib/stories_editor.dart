@@ -50,13 +50,14 @@ class ImageEditorWithText extends StatefulWidget {
   final int? galleryThumbnailQuality;
   final String tapToTypeText;
   final String discardEditText;
-  final String exitMsg ;
-  final String cancelText ;
+  final String exitMsg;
+  final String cancelText;
   final String discardText;
   final String saveDraftText;
   final String shareText;
   final String? bottomSubText;
   final String? imageAssetPath;
+  final String doneText;
 
   const ImageEditorWithText(
       {Key? key,
@@ -64,11 +65,13 @@ class ImageEditorWithText extends StatefulWidget {
       required this.onDone,
       this.tapToTypeText = "Tap to Type",
       this.discardEditText = 'Discard Edits?',
-      this.exitMsg = "If you go back now, you'll lose all the edits you've made.",
-      this.cancelText ="cancel",
+      this.exitMsg =
+          "If you go back now, you'll lose all the edits you've made.",
+      this.cancelText = "cancel",
       this.discardText = "Discard",
       this.saveDraftText = "Save Draft",
-      this.shareText="Share",
+      this.shareText = "Share",
+      this.doneText = "Done",
       this.imageAssetPath,
       this.bottomSubText,
       this.middleBottomWidget,
@@ -103,8 +106,8 @@ class _ImageEditorWithTextState extends State<ImageEditorWithText> {
   void dispose() {
     if (mounted) {
       SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-    ));
+        statusBarColor: Colors.white,
+      ));
       super.dispose();
     }
   }
@@ -129,14 +132,14 @@ class _ImageEditorWithTextState extends State<ImageEditorWithText> {
           ],
           child: MainView(
             sampleText: widget.sampleText,
-            tapToTypeText:widget.tapToTypeText,
-            discardEditText:widget.discardEditText,
-            exitMsg :widget.exitMsg ,
-            cancelText :widget.cancelText ,
-            discardText:widget.discardText,
-            saveDraftText:widget.saveDraftText,
-            shareText:widget.shareText,
-            bottomSubText:widget.bottomSubText,
+            tapToTypeText: widget.tapToTypeText,
+            discardEditText: widget.discardEditText,
+            exitMsg: widget.exitMsg,
+            cancelText: widget.cancelText,
+            discardText: widget.discardText,
+            saveDraftText: widget.saveDraftText,
+            shareText: widget.shareText,
+            bottomSubText: widget.bottomSubText,
             imageAssetPath: widget.imageAssetPath,
             onDone: widget.onDone,
             fontFamilyList: widget.fontFamilyList,
@@ -148,6 +151,7 @@ class _ImageEditorWithTextState extends State<ImageEditorWithText> {
             onBackPress: widget.onBackPress,
             editorBackgroundColor: widget.editorBackgroundColor,
             galleryThumbnailQuality: widget.galleryThumbnailQuality,
+            doneText: widget.doneText,
           ),
         ),
       ),
