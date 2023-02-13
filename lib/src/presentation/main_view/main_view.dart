@@ -60,11 +60,9 @@ class MainView extends StatefulWidget {
 
   /// editor custom color palette list
   List<Color>? colorList;
+
   ///text to show for tap to type
   String? tapToTypeText;
-
- 
- 
 
   String discardEditText;
   String exitMsg;
@@ -74,6 +72,7 @@ class MainView extends StatefulWidget {
   String shareText;
   String? bottomSubText;
   String? imageAssetPath;
+  String doneText;
 
   MainView(
       {Key? key,
@@ -81,11 +80,13 @@ class MainView extends StatefulWidget {
       required this.onDone,
       this.tapToTypeText,
       this.discardEditText = 'Discard Edits?',
-      this.exitMsg = "If you go back now, you'll lose all the edits you've made.",
-      this.cancelText ="cancel",
+      this.exitMsg =
+          "If you go back now, you'll lose all the edits you've made.",
+      this.cancelText = "cancel",
       this.discardText = "Discard",
       this.saveDraftText = "Save Draft",
-      this.shareText="Share",
+      this.shareText = "Share",
+      this.doneText = "Done",
       this.imageAssetPath,
       this.bottomSubText,
       this.middleBottomWidget,
@@ -124,13 +125,12 @@ class _MainViewState extends State<MainView> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       var _control = Provider.of<ControlNotifier>(context, listen: false);
-      var editTextContol = Provider.of<TextEditingNotifier>(context, listen: false);
+      var editTextContol =
+          Provider.of<TextEditingNotifier>(context, listen: false);
       // /// initialize control variable provider
-      editTextContol.text=widget.sampleText;
-      _control.isTextEditing =true;
-      
+      editTextContol.text = widget.sampleText;
+      _control.isTextEditing = true;
 
-      
       _control.middleBottomWidget = widget.middleBottomWidget;
       _control.isCustomFontList = widget.isCustomFontList ?? false;
       if (widget.gradientColors != null) {
@@ -321,7 +321,8 @@ class _MainViewState extends State<MainView> {
                               ignoring: true,
                               child: Align(
                                 alignment: const Alignment(0, -0.1),
-                                child: Text(widget.tapToTypeText??'Tap to type',
+                                child: Text(
+                                    widget.tapToTypeText ?? 'Tap to type',
                                     style: TextStyle(
                                         fontFamily: 'Alegreya',
                                         package: 'photo_editor_with_share',
@@ -347,6 +348,11 @@ class _MainViewState extends State<MainView> {
                                 child: TopTools(
                                   contentKey: contentKey,
                                   context: context,
+                                  cancelText: widget.cancelText,
+                                  discardEditText: widget.discardEditText,
+                                  discardText: widget.discardText,
+                                  exitMsg: widget.exitMsg,
+                                  saveDraftText: widget.saveDraftText,
                                 )),
                           ),
 
@@ -364,6 +370,7 @@ class _MainViewState extends State<MainView> {
                             child: TextEditor(
                               context: context,
                               text: widget.sampleText,
+                              doneText: widget.doneText,
                             ),
                           ),
 
@@ -385,8 +392,8 @@ class _MainViewState extends State<MainView> {
                             widget.onDone!(bytes);
                           });
                         },
-                        shareText:widget.shareText ,
-                        bottomSubText:widget.bottomSubText ,
+                        shareText: widget.shareText,
+                        bottomSubText: widget.bottomSubText,
                         onDoneButtonStyle: widget.onDoneButtonStyle,
                         editorBackgroundColor: widget.editorBackgroundColor,
                         imageAssetPath: widget.imageAssetPath,
@@ -435,7 +442,8 @@ class _MainViewState extends State<MainView> {
                                 color: Colors.white,
                                 width: 1.2,
                               )),
-                          child:  Text(widget.cancelText,
+                          child: Text(
+                            widget.cancelText,
                             style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
@@ -479,12 +487,14 @@ class _MainViewState extends State<MainView> {
 // String cancelText ="cancel",
 // String discardText = "Discard",
 // String saveDraftText = "Save Draft"
-          exitDialog(context: context, contentKey: contentKey,
-          discardEditText:widget.discardEditText,
-exitMsg:widget.exitMsg,
-cancelText:widget.cancelText,
-discardText:widget.discardText,
-saveDraftText:widget.saveDraftText,
+          exitDialog(
+            context: context,
+            contentKey: contentKey,
+            discardEditText: widget.discardEditText,
+            exitMsg: widget.exitMsg,
+            cancelText: widget.cancelText,
+            discardText: widget.discardText,
+            saveDraftText: widget.saveDraftText,
           );
     }
     return false;

@@ -16,7 +16,12 @@ import 'package:photo_editor_with_share/src/presentation/widgets/size_slider_sel
 class TextEditor extends StatefulWidget {
   final BuildContext context;
   final String text;
-  const TextEditor({Key? key, required this.context, required this.text})
+  final String doneText;
+  const TextEditor(
+      {Key? key,
+      required this.context,
+      required this.text,
+      required this.doneText})
       : super(key: key);
 
   @override
@@ -81,6 +86,7 @@ class _TextEditorState extends State<TextEditor> {
                               child: TopTextTools(
                                 onDone: () => _onTap(
                                     context, controlNotifier, editorNotifier),
+                                doneText: widget.doneText,
                               )),
                         ),
 

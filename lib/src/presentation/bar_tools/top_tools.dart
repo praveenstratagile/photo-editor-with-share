@@ -13,7 +13,20 @@ import 'package:photo_editor_with_share/src/presentation/widgets/tool_button.dar
 class TopTools extends StatefulWidget {
   final GlobalKey contentKey;
   final BuildContext context;
-  const TopTools({Key? key, required this.contentKey, required this.context})
+  final String discardEditText;
+  final String exitMsg;
+  final String cancelText;
+  final String discardText;
+  final String saveDraftText;
+  const TopTools(
+      {Key? key,
+      required this.contentKey,
+      required this.context,
+      required this.discardEditText,
+      required this.exitMsg,
+      required this.cancelText,
+      required this.discardText,
+      required this.saveDraftText})
       : super(key: key);
 
   @override
@@ -43,8 +56,14 @@ class _TopToolsState extends State<TopTools> {
                     backGroundColor: Colors.black12,
                     onTap: () async {
                       var res = await exitDialog(
-                          context: widget.context,
-                          contentKey: widget.contentKey);
+                        context: widget.context,
+                        contentKey: widget.contentKey,
+                        discardEditText: widget.discardEditText,
+                        exitMsg: widget.exitMsg,
+                        cancelText: widget.cancelText,
+                        discardText: widget.discardText,
+                        saveDraftText: widget.saveDraftText,
+                      );
                       if (res) {
                         Navigator.pop(context);
                       }

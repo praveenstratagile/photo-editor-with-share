@@ -38,12 +38,14 @@ Future createGiphyItem(
 }
 
 /// custom exit dialog
-Future<bool> exitDialog({required context, required contentKey,
-String discardEditText = 'Discard Edits?',
-String exitMsg = "If you go back now, you'll lose all the edits you've made.",
-String cancelText ="cancel",
-String discardText = "Discard",
-String saveDraftText = "Save Draft"
+Future<bool> exitDialog({
+  required context,
+  required contentKey,
+  required String discardEditText,
+  required String exitMsg,
+  required String cancelText,
+  required String discardText,
+  required String saveDraftText,
 }) async {
   return (await showDialog(
         context: context,
@@ -63,7 +65,7 @@ String saveDraftText = "Save Draft"
               height: 280,
               decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
-                  color: const Color(0xff007480),//HexColor.fromHex('#262626'),
+                  color: const Color(0xff007480), //HexColor.fromHex('#262626'),
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: const [
                     BoxShadow(
@@ -74,8 +76,9 @@ String saveDraftText = "Save Draft"
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                   Text(discardEditText,
-                    style:const TextStyle(
+                  Text(
+                    discardEditText,
+                    style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
@@ -84,8 +87,9 @@ String saveDraftText = "Save Draft"
                   const SizedBox(
                     height: 20,
                   ),
-                   Text(exitMsg,
-                    style:const TextStyle(
+                  Text(
+                    exitMsg,
+                    style: const TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
                         color: Colors.white54,
@@ -102,7 +106,8 @@ String saveDraftText = "Save Draft"
                       _resetDefaults(context: context);
                       Navigator.of(context).pop(true);
                     },
-                    child: Text(discardText,
+                    child: Text(
+                      discardText,
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.redAccent.shade200,
@@ -143,8 +148,9 @@ String saveDraftText = "Save Draft"
                         _dispose(context: context, message: 'Draft Empty');
                       }
                     },
-                    child:  Text(saveDraftText,
-                      style:const TextStyle(
+                    child: Text(
+                      saveDraftText,
+                      style: const TextStyle(
                           fontSize: 16,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -164,8 +170,9 @@ String saveDraftText = "Save Draft"
                     onTap: () {
                       Navigator.of(context).pop(false);
                     },
-                    child:  Text(cancelText,
-                      style:const TextStyle(
+                    child: Text(
+                      cancelText,
+                      style: const TextStyle(
                           fontSize: 16,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
