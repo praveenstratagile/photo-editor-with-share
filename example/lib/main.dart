@@ -48,7 +48,9 @@ class _ExampleState extends State<Example> {
                             galleryThumbnailQuality: 300,
                             imageAssetPath: "assets/images/yakinLogo.png",
                             //isCustomFontList: true,
-                            exitMsg: "the is the way to save ",
+                            exitMsg:
+                                "the is the way to save this it to verify the most successful thing to mak eit discard it so check that ",
+                            discardEditText: "Berhenti Menyunting?",
                             onDone: (uri) {
                               debugPrint(uri);
                               Share.shareFiles([uri]);

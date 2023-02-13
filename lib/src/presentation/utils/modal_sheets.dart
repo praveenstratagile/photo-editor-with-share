@@ -62,7 +62,7 @@ Future<bool> exitDialog({
               padding: const EdgeInsets.only(
                   top: 25, bottom: 5, right: 20, left: 20),
               alignment: Alignment.center,
-              height: 280,
+              height: 350,
               decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   color: const Color(0xff007480), //HexColor.fromHex('#262626'),
@@ -78,6 +78,7 @@ Future<bool> exitDialog({
                 children: <Widget>[
                   Text(
                     discardEditText,
+                    textAlign: TextAlign.center,
                     style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
