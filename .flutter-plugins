@@ -1,10 +1,9 @@
 # This is a generated file; do not edit or check into version control.
-fluttertoast=C:\\Users\\STRAT165\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\fluttertoast-8.1.2\\
-image_gallery_saver=C:\\Users\\STRAT165\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\image_gallery_saver-1.7.1\\
-path_provider=C:\\Users\\STRAT165\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\path_provider-2.0.11\\
-path_provider_android=C:\\Users\\STRAT165\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\path_provider_android-2.0.22\\
-path_provider_ios=C:\\Users\\STRAT165\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\path_provider_ios-2.0.11\\
-path_provider_linux=C:\\Users\\STRAT165\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\path_provider_linux-2.1.7\\
-path_provider_macos=C:\\Users\\STRAT165\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\path_provider_macos-2.0.7\\
-path_provider_windows=C:\\Users\\STRAT165\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\path_provider_windows-2.1.3\\
-photo_manager=C:\\Users\\STRAT165\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\photo_manager-2.5.2\\
+fluttertoast=/Users/stratagile/.pub-cache/hosted/pub.dev/fluttertoast-8.2.1/
+image_gallery_saver=/Users/stratagile/.pub-cache/hosted/pub.dev/image_gallery_saver-1.7.1/
+path_provider=/Users/stratagile/.pub-cache/hosted/pub.dev/path_provider-2.0.13/
+path_provider_android=/Users/stratagile/.pub-cache/hosted/pub.dev/path_provider_android-2.0.23/
+path_provider_foundation=/Users/stratagile/.pub-cache/hosted/pub.dev/path_provider_foundation-2.1.2/
+path_provider_linux=/Users/stratagile/.pub-cache/hosted/pub.dev/path_provider_linux-2.1.9/
+path_provider_windows=/Users/stratagile/.pub-cache/hosted/pub.dev/path_provider_windows-2.1.4/
+photo_manager=/Users/stratagile/.pub-cache/hosted/pub.dev/photo_manager-2.5.2/

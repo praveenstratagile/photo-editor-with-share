@@ -156,10 +156,10 @@ packages:
     dependency: transitive
     description:
       name: gallery_media_picker
-      sha256: "772b0ededd872dee1915c87c81ee090167757c4fcb547e089ef2815d02756211"
+      sha256: efa83c3d86c7b697a357d13d29b66c743038062054a3d35432a871cb2b8547a4
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.82"
+    version: "0.0.9+2"
   http:
     dependency: transitive
     description:
